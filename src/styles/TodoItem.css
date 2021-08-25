@@ -1,0 +1,44 @@
+/* #F0D9FF */
+
+.item {
+    background:#BFA2DB;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 10px;
+    max-width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+}
+
+.todo-description {
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.check{
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.check:hover {
+    color: green;
+}
+
+.delete-todo {
+    position: absolute;
+    color: white ;
+    top: -8px;
+    right: -5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.delete-todo:hover {
+    color: red;
+}
