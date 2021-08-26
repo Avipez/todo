@@ -1,9 +1,10 @@
 import React from "react";
+import "./styles/TodoList.css"
 
 function TodoList(props) {
     return (
-        <section>
-            <ul>
+        <section className="todolist-wrapper">
+            <ul className="todolist">
                 {props.children}
             </ul>
         </section>

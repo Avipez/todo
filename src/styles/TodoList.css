@@ -1,0 +1,10 @@
+.todolist-wrapper {
+    width: 100%;
+}
+
+.todolist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}

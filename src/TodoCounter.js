@@ -4,7 +4,7 @@ import "./styles/TodoCounter.css"
 
 function TodoCounter() {
     return (
-        <h2 className="TodoCounter"> Has completados 1000 8000 TODOs</h2>
+        <h2 className="TodoCounter"> Has completados 1000 de 8000 TODOs</h2>
     )
 }
 

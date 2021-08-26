@@ -1,3 +1,7 @@
 .TodoCounter {
+    font-size: 35px;
+    line-height: 50px;
     text-align: center;
+    color: white;
+    -webkit-text-stroke: 1px #BFA2DB;
 }
