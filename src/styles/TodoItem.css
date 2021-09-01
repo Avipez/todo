@@ -57,3 +57,7 @@
     font-size: 30px;
     cursor: pointer;
 }
+
+.todo-undo:hover {
+    color: coral;
+}

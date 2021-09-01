@@ -2,8 +2,13 @@ import React from 'react';
 import './styles/CreateTodoButton.css';
 
 function CreateTodoButton(props) {
+  const onClickButton = () => {
+    alert("Aquí se deberia de abrir el modal");
+  };
+
   return (
-    <button className="create-todo_button fas fa-plus-circle"></button>
+    <button className="create-todo_button fas fa-plus-circle" onClick={onClickButton}>
+    </button>
   );
 }
 

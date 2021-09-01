@@ -18,6 +18,8 @@ const todos = [
 ]
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState("");
+  
   return (
     <React.Fragment>
       <TodoCounter />
