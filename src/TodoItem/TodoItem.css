@@ -51,7 +51,6 @@
 }
 
 .todo-undo {
-    position: absolute;
     color: white;
     right: 20px;
     font-size: 30px;
@@ -59,5 +58,5 @@
 }
 
 .todo-undo:hover {
-    color: coral;
+    color: greenyellow;
 }
