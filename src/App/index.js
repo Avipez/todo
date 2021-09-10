@@ -1,28 +1,34 @@
 import AppUI from "./AppUI";
 import React from "react";
 
-function useLocalStorage() {
-  const localStorageTodos = localStorage.getItem("TODOS_V1");
-  let parsedTodos;
-
-  const [todos, setTodos] = React.useState(parsedTodos);
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
   
-  if (!localStorageTodos) {
-    localStorage.setItem("TODOS_v1", JSON.stringify([]));
-    parsedTodos = [];
+  if (!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = [];
   } else {
-    parsedTodos = JSON.parse(localStorageTodos)
+    parsedItem = JSON.parse(localStorageItem)
   };
 
-  const saveTodos = (newTodos) => {
-    const stringifiedTodos =JSON.stringify(newTodos);
-    localStorage.setItem("TODOS_V1", stringifiedTodos);
-    setTodos(newTodos);
+  const [item, setItem] = React.useState(parsedItem);
+  
+  const saveItem = (newItem) => {
+    const stringifiedItem = JSON.stringify(newItem);
+    localStorage.setItem(itemName, stringifiedItem);
+    setItem(newItem);
   }
 
+  return [
+    item,
+    saveItem
+  ];
 }
 
 function App() {
+
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
 
   const [searchValue, setSearchValue] = React.useState("");
 
