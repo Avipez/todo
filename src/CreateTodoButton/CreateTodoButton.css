@@ -9,3 +9,16 @@
     font-size: 100px;
     cursor: pointer;
 }
+
+.create-button_over {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: yellowgreen;
+    font-size: 100px;
+    cursor: pointer;
+}
