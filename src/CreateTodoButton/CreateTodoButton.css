@@ -4,6 +4,7 @@
     bottom: 20px;
     border: none;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
     background-color: white;
     color: yellowgreen;
     font-size: 100px;
