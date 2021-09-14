@@ -1,13 +1,17 @@
-body {
-    /* margin: 0; */
-    padding: 0;
-    background-color: #F0D9FF;
-    color: #1E1E1F;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  }
+html{
   
-  #root {
-    margin: 0;
-    position: relative;
-    /* min-height: 100vh; */
-  }
+}
+
+body {
+  min-height: 100vh ;
+  margin-bottom: 120px;
+  padding: 0;
+  background-color: #f0d9ff;
+  color: #1e1e1f;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+#root {
+  margin: 0;
+  position: relative;
+}
