@@ -22,9 +22,9 @@ function TodoForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <label htmlFor="">...</label>
-      <textarea placeholder="Sacar a pasear a firulais" value={newTodoValue} onChange={onChange}></textarea>
-      <button type="button" onClick={onSubmit}>Añadir TODO</button>
+      <label className="" htmlFor="">Escribe algo que te gustaria hacer en el futuro</label>
+      <textarea className="" placeholder="Sacar a pasear a firulais" value={newTodoValue} onChange={onChange}></textarea>
+      <button className="form_button" type="button" onClick={onSubmit}>Añadir TODO</button>
     </form>
   );
 }
