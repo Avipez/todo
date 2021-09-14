@@ -1,12 +1,14 @@
 .create-todo_button {
+    height: 120px;
+    width: 120px;
     position: fixed;
     right: 20px;
     bottom: 20px;
     border: none;
-    -webkit-border-radius: 50%;
+    border-radius: 50%;
     background-color: white;
     color: yellowgreen;
-    font-size: 100px;
+    font-size: 80px;
     cursor: pointer;
 }
 
@@ -19,6 +21,8 @@
     border-radius: 50%;
     background-color: white;
     color: yellowgreen;
-    font-size: 100px;
+    height: 100px;
+    width: 100px;
+    font-size: 80px;
     cursor: pointer;
 }

@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
     background-color: #F0D9FF;
     color: #1E1E1F;
@@ -9,5 +9,5 @@ body {
   #root {
     margin: 0;
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }

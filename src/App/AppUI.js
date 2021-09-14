@@ -1,4 +1,5 @@
 import React from "react";
+import "./appUI.css"
 import { TodoContext } from "../TodoContext";
 import TodoCounter from "../TodoCounter";
 import TodoSearch from "../TodoSearch";
@@ -8,6 +9,7 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal"
 import { TodoForm } from "../TodoForm"
 import {LoadingSkeleton} from "../LoadingSkeleton"
+import { WithLove } from "../Footer";
 
 function AppUI() {
   const { 
@@ -25,11 +27,11 @@ function AppUI() {
       <TodoCounter />
       <TodoSearch />
       <TodoList>
-        {error && <p>Hijole compa, eso no se va poder</p>}
+        {error && <p className="UI">Hijole compa, eso no se va poder</p>}
         {loading && new Array(3).fill(1).map(
-          (item) => <LoadingSkeleton key={item} />
+          (item, index) => <LoadingSkeleton key={index} />
         )}
-        {!loading && !searchedTodos.length && <p>Crea tu primer TODO </p>}
+        {!loading && !searchedTodos.length && <p className="UI">Crea tu primer TODO con el boton <span className="mas">+</span> </p>}
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
@@ -44,7 +46,6 @@ function AppUI() {
       {!!openModal && (
         <Modal>
           <TodoForm>
-            
           </TodoForm>
         </Modal>
       )}
@@ -53,6 +54,7 @@ function AppUI() {
         setOpenModal={setOpenModal}
         openModal={openModal}
       />
+      <WithLove />
     </React.Fragment>
   );
 }

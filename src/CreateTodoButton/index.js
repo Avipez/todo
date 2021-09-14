@@ -11,11 +11,11 @@ function CreateTodoButton(props) {
   };
 
   return (
-    <button
+    <button 
       className={`${
         props.openModal
-          ? "create-button_over fas fa-arrow-circle-left"
-          : "create-todo_button fas fa-plus-circle"
+          ? "create-button_over fas fa-arrow-left"
+          : "create-todo_button fas fa-plus"
       }`}
       onClick={onClickButton}
     ></button>
