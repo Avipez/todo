@@ -22,3 +22,7 @@
   .search-bar:focus {
     outline-color: #61DAFA;
   }
+
+.search-bar:disabled {
+  opacity: 25%;
+}

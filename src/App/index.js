@@ -6,10 +6,9 @@ import TodoItem from "../TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
-import { LoadingSkeleton } from "../LoadingSkeleton";
 import { WithLove } from "../Footer";
 import Todoheader from "../TodoHeader/Todoheader";
-import TodoLoading from "../TodoLoading.js/TodoLoading";
+import TodoLoading from "../TodoLoading";
 import EmptyTodos from "../EmptyTodos/EmptyTodos";
 import { useTodos } from "./useTodos";
 import TodoError from "../TodoError"
@@ -33,17 +32,20 @@ function App() {
 
   return (
     <React.Fragment>
-      <Todoheader>
-        <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Todoheader loading={loading}>
+        <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} /* loading={loading} */ />{/* 
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading} /> */}
       </Todoheader>
       <TodoList
         error={error}
         loading={loading}
         searchedTodos={searchedTodos}
+        totalTodos={totalTodos}
+        searchText={searchValue}
         onError={() => <TodoError />}
         onLoading={() => <TodoLoading />}
-        onEmptyTodos={<EmptyTodos />}
+        onEmptyTodos={() => <EmptyTodos />}
+        onEmptySearchResults={ (searchText) => <p> No hay resultados para {searchText}</p>}
         render={(todo) => (
           <TodoItem
             key={todo.text}

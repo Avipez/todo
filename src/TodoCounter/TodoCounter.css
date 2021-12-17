@@ -5,3 +5,7 @@
     color: white;
     -webkit-text-stroke: 1px #BFA2DB;
 }
+
+.TodoCounter--loading {
+    opacity: 25%;
+}
