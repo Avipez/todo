@@ -4,7 +4,7 @@ import "./TodoList.css"
 function TodoList(props) {
     const renderFunc = props.children || props.render;
     return (
-        <section className="todolist-wrapper">
+        <section className="todolist">
             {props.error && props.onError()}
             {props.loading && props.onLoading()}
             {(!props.loading && !props.totalTodos) && props.onEmptyTodos()}

@@ -12,6 +12,7 @@ import TodoLoading from "../TodoLoading";
 import EmptyTodos from "../EmptyTodos/EmptyTodos";
 import { useTodos } from "./useTodos";
 import TodoError from "../TodoError"
+import ChangeAlertWithStorageListener from "../ChangeAlert";
 import "./app.css";
 
 function App() {
@@ -28,13 +29,14 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    syncronizeTodos
   } = useTodos();
 
   return (
     <React.Fragment>
       <Todoheader loading={loading}>
-        <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} /* loading={loading} */ />{/* 
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading} /> */}
+        <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </Todoheader>
       <TodoList
         error={error}
@@ -46,7 +48,17 @@ function App() {
         onLoading={() => <TodoLoading />}
         onEmptyTodos={() => <EmptyTodos />}
         onEmptySearchResults={ (searchText) => <p> No hay resultados para {searchText}</p>}
-        render={(todo) => (
+        /* render={(todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        )} */
+      >
+        {(todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -55,7 +67,7 @@ function App() {
             onDelete={() => deleteTodo(todo.text)}
           />
         )}
-      />
+      </TodoList>
 
       {/* <TodoList>
         {error && <p className="UI">Hijole compa, eso no se va poder</p>}
@@ -84,7 +96,7 @@ function App() {
           <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
       )}
-
+      <ChangeAlertWithStorageListener syncronize={syncronizeTodos} />
       <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
       <WithLove />
     </React.Fragment>
