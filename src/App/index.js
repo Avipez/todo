@@ -11,8 +11,9 @@ import Todoheader from "../TodoHeader/Todoheader";
 import TodoLoading from "../TodoLoading";
 import EmptyTodos from "../EmptyTodos/EmptyTodos";
 import { useTodos } from "./useTodos";
-import TodoError from "../TodoError"
-import ChangeAlertWithStorageListener from "../ChangeAlert";
+import TodoError from "../TodoError";
+import ChangeAlert from "../ChangeAlert";
+import NoResults from "../NoResults";
 import "./app.css";
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
-    syncronizeTodos
+    syncronizeTodos,
   } = useTodos();
 
   return (
@@ -47,16 +48,7 @@ function App() {
         onError={() => <TodoError />}
         onLoading={() => <TodoLoading />}
         onEmptyTodos={() => <EmptyTodos />}
-        onEmptySearchResults={ (searchText) => <p> No hay resultados para {searchText}</p>}
-        /* render={(todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        )} */
+        onEmptySearchResults= {<NoResults searchText={searchValue} />}
       >
         {(todo) => (
           <TodoItem
@@ -68,35 +60,12 @@ function App() {
           />
         )}
       </TodoList>
-
-      {/* <TodoList>
-        {error && <p className="UI">Hijole compa, eso no se va poder</p>}
-        {loading &&
-          new Array(3)
-            .fill(1)
-            .map((item, index) => <LoadingSkeleton key={index} />)}
-        {!loading && !searchedTodos.length && (
-          <p className="UI">
-            Crea tu primer TODO con el boton <span className="mas">+</span>{" "}
-          </p>
-        )}
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList> */}
-
       {!!openModal && (
         <Modal>
           <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
       )}
-      <ChangeAlertWithStorageListener syncronize={syncronizeTodos} />
+      <ChangeAlert syncronize={syncronizeTodos} />
       <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
       <WithLove />
     </React.Fragment>

@@ -1,16 +1,22 @@
 import React from "react";
-import withStorageListener from "./withStorageListener";
+import useStorageListener from "./useStorageListener";
+import "./changeAlert.css";
+import gif from "../assets/giphy.gif";
 
-const ChangeAlert = ({ show, toggleShow }) => {
+const bmo = gif;
+
+const ChangeAlert = ({ syncronize }) => {
+  const { show, toggleShow } = useStorageListener(syncronize);
   if (show) {
     return (
-      <div>
-        <p>Hubo cambios, intenta recargar la pagina</p>
-        <button
-            onClick={()=> toggleShow(false)}
-        >
-            Volver a cargar la información
-        </button>
+      <div className="alert-bg">
+        <div className="alert_modal">
+          <p>Hubo cambios, intenta recargar la pagina</p>
+          <img src={bmo}></img>
+          <button onClick={() => toggleShow(false)}>
+            Volver a cargar TODO´s
+          </button>
+        </div>
       </div>
     );
   } else {
@@ -18,6 +24,4 @@ const ChangeAlert = ({ show, toggleShow }) => {
   }
 };
 
-const ChangeAlertWithStorageListener = withStorageListener(ChangeAlert);
-
-export default ChangeAlertWithStorageListener;
+export default ChangeAlert;

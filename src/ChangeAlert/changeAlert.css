@@ -1,0 +1,48 @@
+.alert-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 5;
+}
+
+.alert_modal {
+    width: 70%;
+    height: 60%;
+    background-color: #f0d9ff;
+    /* border: 3px solid #a70c0c; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    
+}
+
+.alert_modal p {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+}
+.alert_modal img {
+    width: 150px;
+    height: 150px;
+}
+
+.alert_modal button {
+    align-content: center;
+    width: 70%;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #f0d9ff;
+    border-radius: 5px;
+    color: white;
+    background-color: #BFA2DB;
+    cursor: pointer;
+    font-size: 18px;
+}
