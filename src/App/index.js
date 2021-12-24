@@ -16,6 +16,8 @@ import ChangeAlert from "../ChangeAlert";
 import NoResults from "../NoResults";
 import "./app.css";
 
+/* --openssl-legacy-provider para correr npm run en laptop */
+
 function App() {
   const {
     error,
